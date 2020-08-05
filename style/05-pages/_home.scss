@@ -1,10 +1,14 @@
 .page-home{
     @include backgroundImage('home.png', cover, center center);
-    min-height: 100vh;
+    max-width: 100vw;
     color:$white;
+    overflow: hidden;
 
-    
     .page-hero{
+        position: relative;
+        min-height: calc(100vh - 100px);
+        padding-bottom: 10px;
+
         &__content__left{
             text-align: center;
         }
@@ -20,6 +24,9 @@
             letter-spacing: 2px;
         }
         &__text{
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
             font-family: Arial, Helvetica, sans-serif, sans-serif;
             font-weight: normal;
             font-size: 15px;
@@ -38,21 +45,22 @@
             cursor: pointer;
         }
 
+        &__content__right{
+            @include absolute(auto,0,10px);
+            @include size(250px,250px);
+            overflow: hidden;
+        }
         &__content__right__img{
-            margin-top: 35px;
-            position: relative;
+            @include absolute(50%,auto,auto,50%,translate(-50%,-50%) scale(0));
+
             visibility: hidden;
             opacity: 0;
-            transform:scale(0);
-            height: 0;
-            width: 0;
-
+            @include size(230px,230px);
+           
             &-1{
-                width:230px;
-                height:230px;
                 visibility: visible;
                 opacity: 1;
-                transform:scale(1);
+                transform:translate(-50%,-50%) scale(1);
             }
             img{
                 @include size(90%,90%);
@@ -71,28 +79,199 @@
         }
 
         &__pagination{
-            @include absolute(auto,auto,20px,20px);
-
+            @include absolute(auto,auto,20px,0);
+            
             &__item{
                 @include size(25px, 25px, 0 10px 0 0);
-                border-radius:50%;
                 background-color: $white;
+                border-radius:50%;
                 border:none;
                 position: relative;
-                
+                cursor: pointer;    
+
                 &::after{
-                    content:'';
                     @include size(50%,50%);
                     @include absolute(50%,auto,auto,50%,translate(-50%,-50%));
+                    content:'';
+                    display: block;
                     background-color: transparent;
                     border-radius: 50%;
-                    display: block;
                     transition:1s;
                 }                
                 &--active::after{
                     background-color: $purple;
                 }
                 
+            }
+        }
+    }
+}
+
+@media screen and (max-height:400px){
+    .page-home .page-hero{
+        &__content__right{
+            display: none;
+        }
+        &__pagination{
+            display: none;
+        }
+    }
+}
+@media screen and (max-height:569px){
+    .page-home .page-hero{
+        &__content__left{
+            text-align: left;
+        }
+        &__subtitle{
+            font-size: 24px;
+            line-height: 1;
+        }
+        &__title{
+            font-size: 30px;
+            line-height: 1;
+        }
+        &__text{
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        &__btn{
+            @include size(130px,35px,15px 0 0);
+            font-size: 16px;
+        }
+
+        &__content__right{
+            @include size(160px,160px);
+            &__img{
+                    @include size(130px, 130px);
+                &::after{
+                    @include size(150px,150px);
+                }
+            }
+        }
+    }
+}
+@media screen and (min-height:570px) and (max-height:650px){
+    .page-home .page-hero{
+        &__content__right{
+            @include size(200px,200px);
+
+            &__img{
+                    @include size(170px, 170px);
+                &::after{
+                    @include size(190px,190px);
+                }
+            }
+        }
+    }
+}
+
+@mixin home--xs {
+    .page-home .page-hero{
+        &__subtitle{
+            font-size: 35px;
+        }
+        &__title{
+            font-size: 55px;
+        }
+    }
+}
+@mixin home--sm{
+    .page-home .page-hero{
+        display: flex;
+
+        &__content__left{
+            text-align: left;
+        }
+        &__subtitle{
+            font-size: 45px;
+        }
+        &__title{
+            font-size: 65px;
+        }
+        &__text{
+            font-size: 16px;
+            line-height: 1.4;
+            max-width: 500px;
+            margin-left: initial;
+            margin-right: initial;
+        }
+        &__btn{
+            @include size(180px,55px,45px 0 0);
+            font-size: 21px;
+        }
+        &__content__right{
+            @include size(330px,330px);
+            bottom:40px;
+
+            &__img{
+                    @include size(300px,300px);
+                &::after{
+                    @include size(320px,320px);
+                }
+            }
+        }
+    }
+}
+@mixin home--ms {
+    .page-home .page-hero{
+        min-height: calc(100vh - 125px);
+
+        &__subtitle{
+            font-size: 55px;
+        }
+        &__title{
+            line-height: 1;
+            font-size: 75px;
+        }
+        &__text{
+            margin-top: 40px;
+            font-size: 18px;
+        }
+        &__content__right{
+            @include size(390px,390px);
+            right:20px;
+            bottom:60px;
+            
+            &__img{
+                @include size(360px,360px);
+
+                &::after{
+                    @include size(380px,380px);
+                }
+            }
+        }
+        &__pagination{
+            bottom:40px;
+        }
+    }
+}
+@mixin home--md {
+    .page-home .page-hero{
+        &__subtitle{
+            font-size: 65px;
+        }
+        &__title{
+            font-size: 90px;
+        }
+        &__text{
+            font-size: 20px;
+        }
+        &__btn{
+            @include size(200px,65px,45px 0 0);
+            font-size: 25px;
+            letter-spacing: 2px;
+        }
+        &__content__right{
+            right:60px;
+            bottom:90px;
+            @include size(460px,460px);
+
+            &__img{
+                @include size(420px,420px);
+
+                &::after{
+                    @include size(450px,450px);
+                }
             }
         }
     }

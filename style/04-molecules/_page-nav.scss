@@ -3,27 +3,81 @@
     @include size(100%,100px);
 
     &__navbar{
+        &__item {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+            a{ color:$white;  }
+        }
+    }
+}
+
+@media screen and (max-height:550px)  and (orientation:"landscape" ){
+    .page-nav__navbar__item{
+        margin-top: 10px;
+    }
+}
+@mixin page-nav--sm-max {
+    .page-nav__navbar{
         @include absolute(0,0,0,0,auto,50);
         @include flex(flex-start, center, column);
         padding-top: 100px;
-        background-color: $black;
         background: linear-gradient(to top, $violet, $black);
-        
         opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-
-        &__item {
+        &__item{
             margin-top: 30px;
             display: block;
             text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 0;
-            transform:translateX(-50%);
-            a{
-                color:$white;
+        }
+    }
+}
+@mixin page-nav--sm {
+    .page-nav{
+        &__navbar{
+            padding: 5px 10px;
+            background-color: $violet;
+            border-radius:35px;
+            visibility: visible!important;
+            pointer-events: initial!important;
+            opacity: 1;
+
+            &__item{
+                margin-top: 0;
+                padding: 5px 15px;
+                display: inline-block;
+                transform: translateX(0);
+                opacity: 1;
+                font-size: 17px;
+                a{ color:$black; }
+                
+                &--active{
+                    background-color: $black;
+                    border-radius:20px;
+                    a{ color:$violet }
+                }
+                &--sm-none{
+                    display: none;
+                }
             }
         }
+    }
+}
+@mixin page-nav--ms {
+    .page-nav{
+        height:125px;
+
+        &__navbar{
+            padding: 7px 15px;
+
+            &__item{
+                font-size: 19px;
+                padding: 5px 20px;
+            }
+        }
+    }
+}
+@mixin page-nav--md {
+    .page-nav__navbar__item{
+        font-size: 22px;
     }
 }

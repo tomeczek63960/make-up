@@ -1,0 +1,13 @@
+// --sm
+@media screen and (min-width:700px){
+    @include bars--sm;
+    @include page-logo--sm;
+    @include page-nav--sm;
+    @include home--sm;
+
+}
+
+// --sm-max
+@media screen and (max-width:699px){
+    @include page-nav--sm-max;
+}

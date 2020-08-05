@@ -9,3 +9,14 @@
         transform: translateY(-50%);
     }
 }
+
+@media screen and (max-height:550px){
+    .page-nav__navbar .page-logo{
+        display: none;
+    }
+}
+@mixin page-logo--sm {
+    .page-logo{
+        @include size(140px, 60px);
+    }
+}
