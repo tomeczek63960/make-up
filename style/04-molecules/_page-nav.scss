@@ -1,0 +1,29 @@
+.page-nav{
+    @include flex(space-between, center);
+    @include size(100%,100px);
+
+    &__navbar{
+        @include absolute(0,0,0,0,auto,50);
+        @include flex(flex-start, center, column);
+        padding-top: 100px;
+        background-color: $black;
+        background: linear-gradient(to top, $violet, $black);
+        
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        &__item {
+            margin-top: 30px;
+            display: block;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0;
+            transform:translateX(-50%);
+            a{
+                color:$white;
+            }
+        }
+    }
+}

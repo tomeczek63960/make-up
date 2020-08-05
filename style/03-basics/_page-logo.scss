@@ -1,0 +1,11 @@
+.page-logo{
+    @include backgroundImage('page-logo.svg', cover, center center);
+    @include size(100px, 45px);
+    display: block;
+    text-indent: -9999px;
+
+    .page-nav__navbar &{
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+}
