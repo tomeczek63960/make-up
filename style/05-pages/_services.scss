@@ -1,0 +1,468 @@
+.page-services{
+    @include backgroundImage('services/service.png', cover, bottom left);
+    color:$white;
+    overflow: hidden;
+    padding-bottom: 150px;
+
+    &__hero{
+
+        &__discount{
+            @include size(200px, 75px, 0 auto);
+            position: relative;
+
+            &__text{
+                position: relative;
+                z-index: 10;
+                font-size: 45px;
+                font-family: PragatiNarrow;
+                font-weight: bold;
+                line-height:65px;
+                text-align: center;
+                text-transform: uppercase;
+                
+                &--large{
+                    font-size: 75px;
+                    font-weight: 500;
+                    vertical-align: middle;
+                }
+            }
+            &__bg{
+                @include size(120%,120%);
+                @include absolute(auto, auto,0,-10%);
+                clip-path: polygon(0 20%, 100% 0%, 86% 100%, 6% 100%);
+                background: linear-gradient(to bottom, #7151C5, $black);
+            }
+            &::after{   
+                @include size(120%,120%);
+                @include absolute(auto,-10%,0);
+                @include backgroundImage('services/shape.png',cover,center);
+                content:"";
+                display: block;
+                opacity: 1;
+                transform: scale(1);
+            }
+           
+        }
+
+        &__service__item{
+            margin-top: 25px;
+            display: flex;
+            align-items: center;
+
+            &-wrapper{
+                    position: relative;
+                &::after{
+                    content:"";
+                    @include size(50px,50px);
+                    @include absolute(43%,10%,auto,auto, rotate(45deg));
+                    border:2px solid $white;
+                    opacity: 1;
+                    display: none;
+                }
+                &::before{
+                    content:"";
+                    @include size(30px,30px);
+                    @include absolute(calc(43% + 60px), calc(10% + 27px),auto ,auto, translate(50%,-50%),1);
+                    background:linear-gradient(to top, #0D0C10,#7554CC);
+                    border-radius:50%;
+                    opacity: 1;
+                    display: none;
+                }
+            }
+            &__img{
+                @include size(110px,110px);
+                border-radius:50%;
+                overflow: hidden;
+                position: relative;
+                z-index: 1;
+                background-image: linear-gradient(to top, #0D0C10, #7857CF);
+
+                &::after{
+                    @include size(88%,88%);
+                    @include absolute(50%,auto,auto,50%,translate(-50%,-50%));
+                    content:"";
+                    background-size: cover;                    
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    border-radius: 50%;
+                }
+                &-1::after{
+                    background-image: url('../assets/services/service-1.png');
+                }
+                &-2::after{
+                    background-image: url('../assets/services/service-2.png');
+                }
+            }
+            &__text{
+                margin-left: -30px;
+                padding-left: 40px;
+                width: 200px;
+                height: 40px;
+                display: block;
+                border:2px solid $white;
+                border-radius:25px;
+                line-height: 40px;
+                font-size: 20px;
+                letter-spacing: 1px;
+            }
+        }
+        &__contact__info{
+            margin-top: 20px;
+            margin-left: -45px;
+            padding: 10px 30px 10px 50px;
+            max-width: 300px;
+            border:2px solid $white;
+            font-family: Roboto;
+            font-weight: 500;
+            font-size: 15px;
+            border-radius: 30px;
+
+            &__item{
+                display: block;
+            }
+            a{
+                color:$white;
+            }
+            p{
+                font-weight: bold;
+            }
+
+        }
+
+        &__content{
+            @include flex(auto,flex-end,column);
+            text-align: right;
+        }
+        &__subtitle{
+            margin-top: 25px;
+            color:$dark-violet;
+            font-size: 30px;
+            font-family: PragatiNarrow;
+            text-align: right;
+            opacity: 0;
+            transform:translateY(30%);
+        }
+        &__title{
+            display: inline-block;
+            position: relative;
+            text-align: right;
+            font-size: 60px;
+            opacity: 0;
+            transform:translateY(35%);
+            
+            &::after{
+                @include absolute(auto,0,0);
+                @include size(0,1px);
+                display: block;
+                content:"";
+                background-color: $violet;
+            }
+        }
+        &__text{
+            margin-top: 25px;
+            max-width: 300px;
+            font-size: 15px;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            opacity: 0;
+            transform: translateY(40%);
+        }
+        &__social-media{
+            margin-top: 20px;
+            a{
+                opacity: 0;
+                transform:scale(0)
+            }
+        }
+
+        &__img{
+            @include absolute(auto, auto, 0,0,auto,1, fixed);
+
+            height:140px;
+            max-width: 320px;
+            width: 100%;
+            clip-path: ellipse(50% 55% at 22% 44%);
+            transform: rotate(-30deg) scale(0) ; 
+            
+            &__wrapper{
+                @include absolute(0,auto,auto,0,rotate(30deg));
+                @extend %master-size;
+
+                img{
+                    width: 70%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:600px){
+
+    .page-services{
+        background-image:url('../assets/services/cover.png'), url('../assets/services/service.png');
+        background-size: 25% 75%, 100% 100%;
+        background-repeat: no-repeat;
+        background-position: top -2% left 50%, bottom left;
+
+        &__hero{
+            @include flex(auto, flex-end,column);
+
+            &__discount{
+                margin-right: 30px;
+            }
+            &__contact__info{
+                @include absolute(55%,auto,auto,-40px,auto,auto,fixed);
+                margin: 0;
+                padding: 10px 50px 10px 80px;
+                max-width: 500px;
+                font-size: 16px;
+            }
+
+            &__subtitle{
+                margin-top: 40px;
+            }
+        }
+    }
+}
+
+@mixin services--sm {
+    .page-services{
+
+        &__hero{
+            padding-right: 20px;
+
+            &__discount{
+                margin-top: 25px;
+            }
+            &__service__item{
+
+                &-wrapper{
+                    margin-top: 20px;
+                    padding-right: 40px;
+                    position: relative;
+
+                    &::after{
+                        display: block;
+                    }
+                    &::before{
+                        display: block;
+                    }
+                }
+
+                &-1{
+                    margin-right: 30px;
+                }
+                &-2{
+                  .page-services__hero__service__item__text{
+                    margin-left: -30px;
+                    height: 45px;
+                    font-size: 21px;
+                    line-height: 45px;
+                  }
+                }
+                &__img{
+                    &-2{
+                        @include size(130px,130px, 20px 0 0);
+                    }
+                }
+
+            }
+
+            &__subtitle{
+                font-weight: normal;
+                font-size: 50px;
+            }
+            &__title{
+                font-size: 75px;
+            }
+            &__text{
+                line-height: 1.4;
+                font-size: 16px;
+                max-width: 400px;
+            }
+
+            &__img{
+                left:-40px;
+                height:250px;
+                max-width: 450px;
+            }
+        }
+    }
+}
+
+@mixin services--ms {
+    .page-services{
+        &__hero{
+            &__discount{
+                margin-top: 40px;
+            }
+            &__service__item{
+
+                &-wrapper{
+                    padding-right: 60px;
+                }
+                &__text{
+                    @include size(240px, 45px, auto, 0 0 0 60px);
+                    font-size: 21px;
+                    line-height: 45px;
+                }
+                &-2 .page-services__hero__service__item__text{
+                    @include size(260px,50px);
+                    font-size: 22px;
+                    line-height: 50px;
+                }
+                &__img{
+                    @include size(130px,130px, 20px 0 0);
+                    &-2{
+                        @include size(150px,150px, 20px 0 0);
+                    }
+                }
+
+            }
+
+            &__subtitle{
+                margin-top: 70px;
+                font-size: 70px;
+                line-height: 0.7;
+            }
+            &__title{
+                font-size: 95px;
+            }
+            &__social-media{
+                margin-top: 35px;
+            }
+            &__img{
+                height:350px;
+                max-width: 600px;
+            }
+        }
+    }
+}
+
+@mixin services--md{
+    .page-services__hero{
+
+        &__discount{
+            @include size(250px, 95px, 75px 0 0);
+
+            &__text{
+                font-size: 50px;
+
+                &--large{
+                    font-size: 95px;
+                    line-height: 95px;
+                }
+                &__bg{
+                    @include size(125%,125%);
+                }
+                &::after{   
+                    @include size(125%,125%);
+                }
+            }
+            
+        }
+        &__service__item{
+
+            &-wrapper{
+                margin-top: 30px;
+                padding-right: 70px;
+            
+            }
+            &__img{
+                @include size(140px,140px);
+                &-2{
+                    @include size(175px,175px);
+                }
+            }
+        }
+        &__contact__info{
+            padding: 10px 70px 10px 90px;
+            line-height: 1.6;
+            letter-spacing: 1px;
+        }
+        &__title{
+            font-size: 110px;
+        }
+        &__text{
+            margin-top: 45px;
+            line-height: 2;
+            font-size: 18px;
+        }
+
+        &__img{
+            height:420px;
+            max-width: 750px;
+        }
+    }
+
+}
+
+@mixin services--lg{
+    .page-services__hero{
+
+        &__discount{
+            @include size(335px, 125px, 35px 0 0);
+
+            &__text{
+                font-size: 60px;
+                &--large{
+                    font-size: 105px;
+                    line-height: 105px;
+                }
+            }
+            
+        }
+        &__service__item{
+
+            &-wrapper{
+                padding-right: 120px;
+
+                &::after{
+                    @include size(60px,60px);
+                    top:43%;
+                    right:25%;
+
+                }
+                &::before{
+                    @include size(40px,40px);
+                    top:calc(45% + 60px);
+                    right:calc(25% + 33px);
+                }
+            }
+            &__text{
+                @include size(260px, 55px, auto, 0 0 0 60px);
+                font-size: 23px;
+                line-height: 55px;
+                border-radius: 40px;
+            }
+            &-2 .page-services__hero__service__item__text{
+                @include size(290px,65px,0 0 0 -40px, 0 0 0 90px);
+                width: 320px;
+                line-height: 60px;
+                font-size: 33px;
+                
+            }
+            &__img{
+                @include size(160px,160px);
+
+                &-2{
+                    @include size(195px,195px);
+                }
+            }
+
+        }
+        &__title{
+            font-size: 140px;
+        }
+        &__text{
+            font-size: 20px;
+        }
+        &__contact__info{
+            top:40%;
+        }
+        &__img{
+            height:600px;
+            max-width: 1000px;
+        }
+    }
+}

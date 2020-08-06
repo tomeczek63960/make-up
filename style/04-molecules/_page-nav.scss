@@ -14,7 +14,7 @@
 
 @media screen and (max-height:550px)  and (orientation:"landscape" ){
     .page-nav__navbar__item{
-        margin-top: 10px;
+        margin-top: 10px!important;
     }
 }
 @mixin page-nav--sm-max {
@@ -23,11 +23,18 @@
         @include flex(flex-start, center, column);
         padding-top: 100px;
         background: linear-gradient(to top, $violet, $black);
-        opacity: 0;
+        visibility: hidden!important;
+        opacity: 0!important;
+        transition:0.5s;
+
         &__item{
             margin-top: 30px;
             display: block;
             text-align: center;
+        }
+        &--active{
+            opacity: 1!important;
+            visibility: visible!important;
         }
     }
 }
@@ -60,6 +67,26 @@
                 }
             }
         }
+        .page-about &__navbar{
+            background-color: $dark-pink;
+            &__item--active a{
+                color:$dark-pink;
+            }
+        }
+        .page-services &__navbar{
+            background-color: #6B4DBB;
+            &__item--active a{
+                color:#6B4DBB
+            }
+        }
+        .page-blog &__navbar{
+            background-color: $orange;
+
+            &__item--active a{
+                color:$orange;
+            }
+
+        }
     }
 }
 @mixin page-nav--ms {
@@ -81,3 +108,4 @@
         font-size: 22px;
     }
 }
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty - Make Up</title>
+
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body data-barba='wrapper' >
+    
+    <main data-barba="container" data-barba-namespace='services' class="page">
+
+        <div class="page-services">
+            <div class="center-wrapper">
+                <nav class="page-nav">
+                    <a href="index.html" class="page-logo">Beauty</a>
+
+                    <button class="bars"> <span class="bars__line"></span> </button>
+                    <ul class="page-nav__navbar">
+                        <li class="page-nav__navbar__item--sm-none"><a href="index.html" class="page-logo">Makeup</a></li>
+                        <li class="page-nav__navbar__item"><a href="index.html">Home</a></li>
+                        <li class="page-nav__navbar__item"><a href="about.html">About</a></li>
+                        <li class="page-nav__navbar__item page-nav__navbar__item--active"><a href="#">Services</a></li>
+                        <li class="page-nav__navbar__item"><a href="blog.html">Blog</a></li>
+                        <li class="page-nav__navbar__item "><a href="#">Sing up</a></li>
+                    </ul>
+                </nav>
+
+                <header class="page-services__hero">
+
+                    <div class="page-services__hero__discount">
+                        <p class="page-services__hero__discount__text"><span class="page-services__hero__discount__text--large"> 50 </span> % off</p>
+                        <div class="page-services__hero__discount__bg"></div>
+                    </div>
+
+                    <div class="page-services__hero__service__item-wrapper">
+                        <div class="page-services__hero__service__item page-services__hero__service__item-1">
+                            <div class="page-services__hero__service__item__img page-services__hero__service__item__img-1"></div>
+                            <p class="page-services__hero__service__item__text">Nail Paint</p>
+                        </div>
+
+                        <div class="page-services__hero__service__item page-services__hero__service__item-2">
+                            <div class="page-services__hero__service__item__img page-services__hero__service__item__img-2"></div>
+                            <p class="page-services__hero__service__item__text">Make-up</p>
+                        </div>
+                    </div>
+                    <div class="page-services__hero__contact__info">  
+                        <p class="page-services__hero__contact__info__item">call us: <a href="tel:923689547">+92 368 9547</a></p>
+                        <a class="page-services__hero__contact__info__item" target='blank' href="index.html">www.yourwebsite.com</a>
+                    </div>
+
+                    <div class="page-services__hero__content">
+                        <h5 class="page-services__hero__subtitle">Belive in Beauty</h5>
+                        <h2 class="page-services__hero__title">Be You</h2>
+                        <p class="page-services__hero__text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doUt enim ad minim veniam, quis nostrud exercitation 
+                        </p>
+                        <div class="page-services__hero__social-media">
+                            <a href="#" class="icon--facebook"></a>
+                            <a href="#" class="icon--instagram"></a>
+                            <a href="#" class="icon--twitter"></a>
+                            <a href="#" class="icon--whatsapp"></a>
+                        </div>
+                    </div>
+                    <div class="page-services__hero__img">
+                        <div class="page-services__hero__img__wrapper">
+                            <img src="./assets/services/service-3.png" alt="beauty">
+                        </div>
+                    </div>
+                </header>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/@barba/core"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/ScrollTrigger.min.js" integrity="sha512-YkmzZl/xoJ+yOJ5YaZ8kBmyQB0jpLQDQpErTSgDsdipDcE1al6Z8TZseXLJLf3it/kRrFRJEpGC2C/jBbIF+Ng==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/CSSRulePlugin.min.js" integrity="sha512-Qsi1/wzhv/tTbglg9qVSOoI8Tm/aQEBjhGszeFo86w9w7+VyCPU6aSm72ActHflic7o5zATaceSn9CW+EshtJg==" crossorigin="anonymous"></script>
+
+    <script src="./js/toggleNav.js"></script>
+    <script src="./js/pageTransition.js"></script>
+    <script src="./js/services/scroll.js"></script>
+</body>
+</html>

@@ -1,5 +1,9 @@
 @media screen and (min-width:900px){
     @include utilities--ms;
     @include page-nav--ms;
+    @include hero--ms;
     @include home--ms;
+    @include about--ms;
+    @include blog--ms;
+    @include services--ms;
 }

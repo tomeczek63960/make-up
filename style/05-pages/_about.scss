@@ -1,0 +1,304 @@
+.page-about{
+    background-image:  url('../assets/about/cover.png'),url('../assets/about/about.png');
+    background-repeat: no-repeat;
+    background-size: 90% 10%, 100% 100%;
+    background-position: top -100% left -10%, center center;
+    max-width: 100vw;
+    color:$white;
+    overflow: hidden;
+
+    &__hero{
+    text-align: center;
+
+    &__subtitle{
+        color:$light-pink;
+        font-size: 27px;
+        font-family: PragatiNarrow;
+        font-weight: 300;
+        letter-spacing: 2px;
+        line-height: 1;
+    }
+    &__title{
+        display: inline-block;
+        font-size: 33px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        position: relative;
+
+        &::before,
+        &::after{
+            content:"";
+            display: block;
+            background-color: $light-pink;
+            transform-origin:right;
+        }
+        &::before{
+            @include size(100%,1px);
+            @include absolute(100%,auto,auto 0);
+        }
+        &::after{
+            @include size(44%,1px);
+            @include absolute(auto,auto,-10px, 50%, translateX(-50%));
+        }
+
+    }
+
+    &__btn{
+        margin-top: 15px;
+        padding: 7px 30px;
+        display: inline-block;
+        background-image: linear-gradient(to bottom, $dark-pink, #D66599);
+        border:none;
+        border-radius: 4px;
+        color: $white;
+        font-size: 15px;
+        font-family: Poppins;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+    &__pagination{
+        margin-top: 15px;
+        display: none;
+
+        &__item{
+            @include size(20px,20px,0 5px);
+            background-color: $white;
+            border-radius: 50%;
+            border:none;
+            position: relative; 
+            cursor: pointer;
+
+            &::after{
+                @include size(50%,50%);
+                @include absolute(50%,auto,auto,50%, translate(-50%,-50%));
+                content:"";
+                display: block;
+                background-color: transparent;
+                border-radius: 50%;
+                transition:.5s;
+            }
+            &--active::after{
+                background-color: $dark-pink;
+            }
+        }
+    }
+    &__text{
+        margin: 15px auto 0;
+        max-width: 400px;
+        font-size: 15px;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+    &__social-media{
+        margin-top: 10px;
+    }
+    &__img{
+        @include absolute(0,0,0,0);
+        border-radius: 50%;
+        border:6px solid $pink;
+        visibility: hidden;
+        opacity: 0;
+        transform:scale(0);
+        overflow: hidden;
+
+        &__wrapper{
+            @include size(130px,130px, 20px auto 0);
+            display: none;
+            
+            position: relative;
+        }
+        &-1{
+            opacity: 1;
+            visibility: visible;
+            transform:scale(1)
+        }
+        img{
+            @extend %master-size;
+        }
+        
+    }
+  }
+}
+
+@media screen and (max-height:500px) and (orientation: "landscape"){
+    .page-about__hero{
+        text-align: left;
+
+        &__subtitle{
+            line-height: 1;
+        }
+        &__title{
+            &::before,
+            &::after{
+                display: none;
+            }
+        }
+        &__text{
+            margin-top: 10px;
+            margin-left: 0;
+            max-width: initial;
+        }
+        &__btn{
+            margin-top: 0;
+        }
+    }
+}
+@media screen and (min-height:560px){
+    .page-about__hero{
+        &__img__wrapper{
+            display: block;
+        }
+        &__pagination{
+            display: block;
+        }
+    }
+}
+@media screen and (min-height:650px){
+    .page-about__hero{
+        &__social-media{
+            margin-top: 25px;
+        }
+        &__pagination{
+            margin-top: 30px;
+        }
+        &__img__wrapper{
+            margin-top: 35px;
+        }
+        &__text{
+            margin-top: 25px;
+        }
+        &__btn{
+            margin-top: 25px;
+        }
+    }
+}
+
+@mixin about--xs {
+    .page-about__hero{
+        @include flex(space-between,flex-end);
+        padding-bottom: 50px;
+    
+        &__content__right{
+            @include flex(auto,flex-end,column);
+            text-align: right;
+            width: 49%;
+            flex-shrink: 0;
+            order: 1;
+        }
+        &__subtitle{
+            font-size: 40px;
+            line-height: 0.4;
+        }
+        &__title{
+            font-size: 47px;
+
+            &::after{
+                left:initial;
+                transform:initial;
+                right:0;
+            }
+        }
+        &__img__wrapper{
+            @include size(180px, 180px, 55px 0 0);
+        }
+        &__btn{
+            padding: 10px 35px;
+            font-size: 17px;
+
+        }
+        &__text{
+            margin-top: 50px;
+            margin-right: initial;
+            margin-left: initial;
+        }
+        &__pagination{
+            margin-top: 40px;
+        }
+        &__content__center{
+            text-align: left;
+            width: 49%;
+            flex-shrink: 0;
+        }
+    }
+}
+@mixin about--sm{
+    .page-about__hero{
+        &__title{
+            font-size: 60px;
+        }
+        &__img__wrapper{
+            @include size(220px,220px);
+        }
+        &__btn{
+            padding: 11px 50px;
+            font-size: 19px;
+        }
+        &__text{
+            font-size: 16px;
+            line-height: 1.3;
+        }
+        &__pagination__item{
+            @include size(25px,25px);
+        }
+    }
+}
+@mixin about--ms {
+    .page-about{
+        background-size: 60% 22%,cover;
+        background-position: top -200% left ,center center;
+
+        &__hero{
+            &__title{
+                font-size: 75px;
+            }
+            &__img__wrapper{
+                @include size(250px,250px);
+            }
+            &__content__center{
+                text-align: center;
+            }
+            &__text{
+                margin-left: auto;
+                margin-right: auto;
+                line-height: 1.7;
+            }
+            &__btn{
+                padding: 15px 60px;
+                font-size: 21px;
+            }
+        }
+    }
+}
+@mixin about--md {
+    .page-about__hero{
+        justify-content: flex-end;
+
+        &__title{
+            font-size: 85px;
+        }
+        &__img{
+            &__wrapper{
+                @include size(320px,320px, 70px 0 0);
+            }
+        }
+        &__content__right{
+            width: 40%;
+        }
+        &__content__center{
+            width: initial;
+        }
+        &__btn{
+            font-size: 24px;
+            padding: 16px 70px;
+            letter-spacing: 2px;
+        }
+        &__text{
+            margin-top: 60px;
+            font-size: 18px;
+            max-width: 470px;
+        }
+        &__pagination{
+            margin-top: 60px;
+        }
+    }
+}

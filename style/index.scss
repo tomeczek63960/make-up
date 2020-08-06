@@ -11,12 +11,17 @@
 // 03 - basics
     @import './03-basics/page-logo';
     @import './03-basics/_bars';
-
+    @import './03-basics/icon';
+    
 // 04 - molecules
     @import './04-molecules/page-nav';
+    @import './04-molecules/_hero';
 
 // 05 - pages
     @import './05-pages/home';
+    @import './05-pages/about';
+    @import './05-pages/services';
+    @import './05-pages/blog';
 
 // 06 - media
 
@@ -24,3 +29,4 @@
     @import './06-media/sm';
     @import './06-media/ms';
     @import './06-media/md';
+    @import './06-media/lg';

@@ -2,8 +2,12 @@
 @media screen and (min-width:700px){
     @include bars--sm;
     @include page-logo--sm;
+    @include icon--sm;
     @include page-nav--sm;
     @include home--sm;
+    @include about--sm;
+    @include blog--sm;
+    @include services--sm;
 
 }
 

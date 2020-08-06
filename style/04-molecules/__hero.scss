@@ -1,0 +1,23 @@
+.page-about__hero,
+.page-services__hero,
+.page-blog__hero,
+.page-home__hero{
+    position: relative;
+    min-height: calc(100vh - 100px);
+    padding-bottom: 10px;
+
+}
+
+.page-services__hero{
+    padding-bottom: 0;
+}
+@mixin hero--ms {
+    
+    .page-about__hero,
+    .page-services__hero,
+    .page-blog__hero,
+    .page-home__hero{
+        min-height: calc(100vh - 125px);
+    }   
+    
+}

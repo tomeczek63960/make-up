@@ -4,10 +4,6 @@
     display: block;
     text-indent: -9999px;
 
-    .page-nav__navbar &{
-        opacity: 0;
-        transform: translateY(-50%);
-    }
 }
 
 @media screen and (max-height:550px){

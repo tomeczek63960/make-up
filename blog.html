@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty - Make Up</title>
+
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body data-barba='wrapper' >
+    
+    <main data-barba="container" data-barba-namespace='blog' class="page">
+
+        <div class="page-blog">
+            <div class="center-wrapper">
+                <nav class="page-nav">
+                    <a href="index.html" class="page-logo">Beauty</a>
+
+                    <button class="bars"> <span class="bars__line"></span> </button>
+                    <ul class="page-nav__navbar">
+                        <li class="page-nav__navbar__item--sm-none"><a href="index.html" class="page-logo">Makeup</a></li>
+                        <li class="page-nav__navbar__item"><a href="index.html">Home</a></li>
+                        <li class="page-nav__navbar__item"><a href="about.html">About</a></li>
+                        <li class="page-nav__navbar__item"><a href="services.html">Services</a></li>
+                        <li class="page-nav__navbar__item page-nav__navbar__item--active"><a href="#">Blog</a></li>
+                        <li class="page-nav__navbar__item "><a href="#">Sing up</a></li>
+                    </ul>
+                </nav>
+
+                <header class="page-blog__hero">
+                    <h5 class="page-blog__hero__subtitle">Blend Beauty in You</h5>
+                    <h2 class="page-blog__hero__title">Beauty shop</h2>
+                    
+                    <div class="page-blog__hero__img-wrapper">
+                        <div class="page-blog__hero__img"> <img src="./assets//blog/blog-1.png" alt="Beauty"></div>
+                    </div>
+                    <div class="page-blog__hero__social-media">
+                        <a href="#" class="icon--facebook"></a>
+                        <a href="#" class="icon--instagram"></a>
+                        <a href="#" class="icon--twitter"></a>
+                        <a href="#" class="icon--whatsapp"></a>
+                    </div>
+                    <a href="index.html" class="page-blog__hero__link">www.yourwebsite.com</a>
+
+                    <div class="page-blog__hero__line"></div>
+                    <a href="services.html" class="page-blog__hero__btn">MAKE-UP & COSMETIC</a>
+                    <p class="page-blog__hero__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doUt enim ad minim veniam, quis nostrud exercitation. 
+                    </p>
+                </header>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/@barba/core"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/CSSRulePlugin.min.js" integrity="sha512-Qsi1/wzhv/tTbglg9qVSOoI8Tm/aQEBjhGszeFo86w9w7+VyCPU6aSm72ActHflic7o5zATaceSn9CW+EshtJg==" crossorigin="anonymous"></script>
+
+    <script src="./js/toggleNav.js"></script>
+    <script src="./js/pageTransition.js"></script>
+</body>
+</html>
